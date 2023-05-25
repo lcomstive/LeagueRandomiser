@@ -1,9 +1,13 @@
 /// Imports ///
+const fs = require('fs')
+const https = require('https')
 const Express = require('express')
 const Session = require('express-session')
 
 /// Config ///
 let port = process.env.PORT || 4434
+let sslKey = process.env.SSL_KEY
+let sslCert = process.env.SSL_CERT
 
 /// Application ///
 const app = Express()
@@ -28,9 +32,17 @@ if(app.get('env') === 'production')
 }
 app.use(Session(sessionConfig))
 
-app.listen(port, () =>
+onServerStart = () =>
 {
 	console.log(`LeagueRandomiser listening on port ${port}`)
-})
+}
+
+if(!sslKey || !sslCert)
+	app.listen(port, onServerStart)
+else
+	https.createServer({
+		key: fs.readFileSync(sslKey),
+		cert: fs.readFileSync(sslCert)
+	}, app).listen(port, onServerStart)
 
 module.exports = app
