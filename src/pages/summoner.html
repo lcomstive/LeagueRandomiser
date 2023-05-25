@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="initial-scale=1.0">
+
+		<script src="/summoner.js"></script>
+
+		<style>
+			body
+			{
+				padding-top: calc(50vh - 250px);
+
+				animation: fade 1.5s ease-out;
+			}
+			
+			@keyframes fade {
+				from { opacity: 0; }
+				to 	 { opacity: 1; }
+			}
+		</style>
+    </head>
+	<body>
+		<h1>League Randomiser</h1>
+		<br>
+
+		<input id="summonerName" type="text" placeholder="Summoner Name">
+
+		<select name="region" id="region">
+			<option value="BR1">BR</option>
+			<option value="EUN1">EUN</option>
+			<option value="EUW1">EUW</option>
+			<option value="LAN">LAN</option>
+			<option value="LA1">LAS</option>
+			<option value="LA2">Brazil</option>
+			<option value="NA1">NA</option>
+			<option value="OC1" selected="selected">OCE</option>
+			<option value="RU1">RU</option>
+			<option value="TR1">TR</option>
+			<option value="JP1">JP</option>
+			<option value="KR">KR</option>
+			<option value="PH2">PH</option>
+			<option value="SG2">SG</option>
+			<option value="TW2">TW</option>
+			<option value="TH2">TH</option>
+			<option value="VN2">VN</option>
+			<option value="PBE">PBE</option>
+		</select>
+
+		<button id="btnCheckSummoner" onClick="checkSummonerName()">Next</button>
+		<p class="subtext">
+			Used to choose a champion at random, with a high likelihood of it being unlocked on your account
+		</p>
+		<br>
+		<text class="hidden" id="message">Not found</text>
+    </body>
+</html>

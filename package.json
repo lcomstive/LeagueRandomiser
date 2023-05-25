@@ -1,0 +1,25 @@
+{
+  "name": "league-randomiser",
+  "version": "0.0.1",
+  "description": "Generates random champion and runes to use",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "nodemon ./src/index.js"
+  },
+  "keywords": [
+    "league",
+    "lol"
+  ],
+  "author": "lcomstive",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "@fightmegg/riot-api": "^0.0.13",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  }
+}

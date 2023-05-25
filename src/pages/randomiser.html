@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>        
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="initial-scale=1.0">
+		
+		<script src="/randomiser.js"></script>
+	</head>
+	<body>
+		<h1>League Randomiser</h1>
+
+		<span id="content">
+			<!-- Summoner Details -->
+			<div id="summonerDetails">
+				<img id="summonerIcon" />
+				<a id="summonerName" href="#">{name}</a>
+				<button id="logout" onClick="clearSession()">X</button>
+			</div>
+
+			<div id="champion">
+				<img id="championIcon" />
+				<p id="championName"></p>
+			</div>
+
+			<div id="runes">
+				<div id="primaryRunes" class="runes">
+					<img />
+					<img />
+					<img />
+					<img />
+					<img />
+
+					<!-- Background for rune type-->
+					<svg class="runeBackground" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+						<g transform="matrix(5.07578e-16,8.28937,-3.26983,2.00219e-16,209.978,-252.963)"><path d="M41.358,5.467C35.956,5.467 31.57,16.847 31.57,30.864C31.57,44.881 35.956,56.261 41.358,56.261C36.712,55.076 32.94,44.104 32.94,30.864C32.94,17.624 36.712,6.653 41.358,5.467Z" style="fill:currentColor"/></g>
+						<g transform="matrix(-7.17881,-4.14469,1.63492,-2.83176,356.922,366.498)"><path d="M41.358,5.467C35.956,5.467 31.57,16.847 31.57,30.864C31.57,44.881 35.956,56.261 41.358,56.261C36.712,55.076 32.94,44.104 32.94,30.864C32.94,17.624 36.712,6.653 41.358,5.467Z" style="fill:currentColor"/></g>
+						<g transform="matrix(7.17881,-4.14469,1.63492,2.83176,-253.988,181.117)"><path d="M41.358,5.467C35.956,5.467 31.57,16.847 31.57,30.864C31.57,44.881 35.956,56.261 41.358,56.261C36.712,55.076 32.94,44.104 32.94,30.864C32.94,17.624 36.712,6.653 41.358,5.467Z" style="fill:currentColor"/></g>
+					</svg>
+				</div>
+				<div id="secondaryRunes" class="runes">
+					<img />
+					<img />
+					<img />
+
+					<!-- Background for rune type-->
+					<svg class="runeBackground" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+						<g transform="matrix(5.07578e-16,8.28937,-3.26983,2.00219e-16,209.978,-252.963)"><path d="M41.358,5.467C35.956,5.467 31.57,16.847 31.57,30.864C31.57,44.881 35.956,56.261 41.358,56.261C36.712,55.076 32.94,44.104 32.94,30.864C32.94,17.624 36.712,6.653 41.358,5.467Z" style="fill:currentColor"/></g>
+						<g transform="matrix(-7.17881,-4.14469,1.63492,-2.83176,356.922,366.498)"><path d="M41.358,5.467C35.956,5.467 31.57,16.847 31.57,30.864C31.57,44.881 35.956,56.261 41.358,56.261C36.712,55.076 32.94,44.104 32.94,30.864C32.94,17.624 36.712,6.653 41.358,5.467Z" style="fill:currentColor"/></g>
+						<g transform="matrix(7.17881,-4.14469,1.63492,2.83176,-253.988,181.117)"><path d="M41.358,5.467C35.956,5.467 31.57,16.847 31.57,30.864C31.57,44.881 35.956,56.261 41.358,56.261C36.712,55.076 32.94,44.104 32.94,30.864C32.94,17.624 36.712,6.653 41.358,5.467Z" style="fill:currentColor"/></g>
+					</svg>
+
+					<div id="statMods">
+						<img />
+						<img />
+						<img />
+					</div>
+				</div>
+			</div>
+
+			<button id="randomise" onClick="randomise()">Roll</button>
+			<p class="subtext">Pressing spacebar also rolls</p>
+		</span>
+		<span id="loading">
+			<p>Loading...</p>
+		</span>
+	</body>
+</html>
