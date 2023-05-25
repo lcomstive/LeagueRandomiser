@@ -5,6 +5,7 @@ module.exports = (app) =>
 {
 	app.get('/', (req, res) =>
 	{
+		console.log(`Session ID: ${req.sessionID}`)
 		if(!req.session.summoner)
 			res.sendFile(path.join(__dirname, '/pages/summoner.html'))
 		else

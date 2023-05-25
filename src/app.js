@@ -18,17 +18,19 @@ app.use(require('body-parser').urlencoded({ extended: true }))
 // Serve static content from local directory
 app.use(Express.static('public'))
 
-var sessionConfig = 
+var sessionConfig =
 {
 	resave: false,
 	saveUninitialized: false,
 	secret: process.env.SESSION_SECRET,
 	cookie: { maxAge: 8640000 /* One day, in milliseconds */ }
 }
-if(app.get('env') === 'production')
+if(app.get('env') === 'production' || process.env.PRODUCTION)
 {
 	app.set('trust proxy', 1) // Trust first proxy
+	app.enable('trust proxy')
 	sessionConfig.cookie.secure = true // Serve secure cookies
+	console.log('Running in production mode')
 }
 app.use(Session(sessionConfig))
 

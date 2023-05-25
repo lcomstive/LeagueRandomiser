@@ -20,14 +20,14 @@ const StatModSlots = [
 
 var randomData = { championID: -1 }
 
-clearSession = () => fetch('/clearSession', { method: 'POST' }).then(location.reload())
+clearSession = () => fetch('/clearSession', { method: 'POST', credentials: 'same-origin' }).then(location.reload())
 
-getChampions = () => fetch('/champions', { method: 'GET' })
+getChampions = () => fetch('/champions', { method: 'GET', credentials: 'same-origin' })
 						.then(response => response.json())
 						.then(body => champions = body.champions)
 						.then(() => console.log(champions))
 
-getRunes = () => fetch('/runes', { method: 'GET' })
+getRunes = () => fetch('/runes', { method: 'GET', credentials: 'same-origin' })
 					.then(response => response.json())
 					.then(body =>
 					{
@@ -73,7 +73,7 @@ randomise = () =>
 	// Choose random champion
 	randomData.championID = champions[Math.floor(Math.random() * champions.length)]
 
-	fetch(`/champions/${randomData.championID}`, { method: 'GET' })
+	fetch(`/champions/${randomData.championID}`, { method: 'GET', credentials: 'same-origin' })
 		.then(response => response.json())
 		.then(body =>
 		{
@@ -125,7 +125,7 @@ window.onload = (event) =>
 	setIsLoaded(false)
 
 	// Get summoner data
-	fetch('/summoner', { method: 'GET' })
+	fetch('/summoner', { method: 'GET', credentials: 'same-origin' })
 		.then(response => response.json())
 		.then(body =>
 		{

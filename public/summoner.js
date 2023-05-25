@@ -19,7 +19,8 @@ function checkSummonerName()
 	{
 		method: 'POST',
 		headers: { 'Content-type': 'application/json' },
-		body: JSON.stringify(contents)
+		body: JSON.stringify(contents),
+		credentials: 'same-origin'
 	})
 	.then((response) => response.json())
 	.then((json) =>
