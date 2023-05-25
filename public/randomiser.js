@@ -107,7 +107,7 @@ randomise = () =>
 	randomData.runes[1].selectedSlots = []
 	slots = randomData.runes[1].slots
 	for(let i = 0; i < 2; i++)
-		randomData.runes[1].selectedSlots.push(slots[i].runes[Math.floor(Math.random() * slots[i].runes.length)])
+		randomData.runes[1].selectedSlots.push(slots[i + 1].runes[Math.floor(Math.random() * slots[i].runes.length)])
 
 	runeRoot = document.getElementById('secondaryRunes')
 
